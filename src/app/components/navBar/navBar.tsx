@@ -17,7 +17,7 @@ export default function NavBar(){
     ];
 
     return(
-        <nav className="bg-white border-gray-200 dark:bg-gray-900 drop-shadow-xl">
+        <nav className="bg-transparent sticky top-0 z-50">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <Image  width={64} height={64} src="/logo.png" alt="Logo" />
@@ -29,7 +29,7 @@ export default function NavBar(){
                 </Button>
                 
                 <div className={`${isOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
-                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 items-center">
+                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:border-gray-700 items-center">
                         {navItems.map((item, index) => (
                             <li key={index}>
                                 <a
