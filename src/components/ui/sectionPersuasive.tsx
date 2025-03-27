@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "motion/react";
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { Highlight } from "@/components/ui/hero-highlight";
 
 export default function SectionPersuasive({sentenceBefore, highlight, sentenceAfter}: {sentenceBefore: string, highlight: string, sentenceAfter: string}) {
     return (
