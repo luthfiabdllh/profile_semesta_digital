@@ -1,25 +1,13 @@
-"use client"
 
-import Particles from "../../components/ui/Particles/Particles";
+import Banner from "@/components/components/banner";
+import SectionPersuasive from "@/components/ui/sectionPersuasive";
 
 export default function Home() {
     return(
         <>
-            <div className="absolute inset-x-0 top-0 h-5/12 
-                bg-gradient-to-b from-gray-100 via-blue-300 to-white 
-                dark:from-gray-950 dark:via-indigo-900 dark:to-black 
-                blur-3xl opacity-30 scale-100 z-[-1]">
-            </div>
-            <Particles
-            particleColors={['#D0E8FF']}
-            particleCount={400}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover={true}
-            alphaParticles={false}
-            disableRotation={false}
-            />
+            <Banner headline="Empowering Your Business with Data & AI Solutions" subHeadline="We provide innovative solutions in Big Data, AI, and Digital Transformation to drive your business growth"/>
+            <SectionPersuasive sentenceBefore="Transform your business with" highlight="AI-driven insights & Big Data solutions" sentenceAfter=". Make smarter decisions, streamline operations, and drive growth with us!"/>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum quasi quo nam id magnam ea accusantium adipisci ipsum exercitationem, sit quaerat! Perferendis harum culpa aperiam aliquid accusamus delectus tenetur vel.</p>
         </>
     )
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./components/themeProvider/themeProvider";
-import NavBar from "./components/navBar/navBar";
+import { ThemeProvider } from "../components/components/themeProvider";
+import NavBar from "../components/components/navBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,8 +34,8 @@ export default function RootLayout({
          defaultTheme="system"
          enableSystem
          disableTransitionOnChange>
-          <NavBar/>
-          <div className="min-h-screen overflow-x-hidden">
+          <div className="min-h-screen overflow-x-hidden relative">
+            <NavBar/>
             <div className="container mx-auto h-screen">
               {children}
             </div>
