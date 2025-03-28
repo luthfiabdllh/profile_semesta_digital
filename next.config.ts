@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // domain: "https://assets.aceternity.com/",
+  images: {
+    domains: ["assets.aceternity.com"], // Tambahkan domain di sini
+  },
 };
 
 export default nextConfig;

@@ -34,7 +34,7 @@ export default function RootLayout({
          defaultTheme="system"
          enableSystem
          disableTransitionOnChange>
-          <div className="min-h-screen overflow-x-hidden relative">
+          <div className="min-h-screen">
             <NavBar/>
             <div className="container mx-auto h-screen">
               {children}
