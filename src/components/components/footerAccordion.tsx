@@ -8,6 +8,10 @@ import { MapPin} from "lucide-react";
 import Link from "next/link";
 import { JSX } from "react";
 
+import dynamic from "next/dynamic";
+const MapLocation = dynamic(() => import("../ui/mapLocation"), { ssr: false });
+
+
 interface Item {
     icon?: JSX.Element;
     text: string;
@@ -44,7 +48,7 @@ export default function FooterAccordion({accordionData}: {accordionData: Accordi
                 <div className="flex mb-5 space-x-3.5 mt-5">
                     <div className="text-wrap text-center">
                         <p>Jl Persatuan UH III/549, Jl. Celeban, Tahunan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55167</p>
-                        <iframe className="w-full h-55 mt-8.5 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1950.5365445977136!2d110.38106739228559!3d-7.8154627188847625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5707bc824bf3%3A0x233e10b49f6db72a!2sKara%20Homestay!5e0!3m2!1sid!2sid!4v1743275308347!5m2!1sid!2sid"></iframe>
+                        <MapLocation/>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,12 @@
+"use client"
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import FooterList from "./footerList";
 import FooterAccordion from "./footerAccordion";
+import dynamic from "next/dynamic";
+const MapLocation = dynamic(() => import("../ui/mapLocation"), { ssr: false });
 
 export default function Footer(){
     const contactUs =[
@@ -52,7 +55,7 @@ export default function Footer(){
                         </div>
                         <div className="text-wrap">
                             <p>Jl Persatuan UH III/549, Jl. Celeban, Tahunan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55167</p>
-                            <iframe className="w-full h-55 mt-8.5 rounded-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1950.5365445977136!2d110.38106739228559!3d-7.8154627188847625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5707bc824bf3%3A0x233e10b49f6db72a!2sKara%20Homestay!5e0!3m2!1sid!2sid!4v1743275308347!5m2!1sid!2sid"></iframe>
+                            <MapLocation/>
                         </div>
                     </div>
                 </div>
@@ -60,8 +63,8 @@ export default function Footer(){
             <FooterAccordion accordionData={accordionData}/>
             <div>
                 <div className="flex justify-center items-center rtl:space-x-reverse mb-3.5">
-                    <hr className="h-[1px] bg-gradient-to-l from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] w-1/2"/>
-                    <hr className="h-[1px] bg-gradient-to-r from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] w-1/2"/>
+                    <hr className="h-[2px] bg-gradient-to-l from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] w-1/2"/>
+                    <hr className="h-[2px] bg-gradient-to-r from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] w-1/2"/>
                 </div>
                 <p className="text-xs text-center text-gray-400">Copyright © 2025 Semesta Data Digital. All rights reserved</p>
             </div>
