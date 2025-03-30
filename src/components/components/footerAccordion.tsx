@@ -4,7 +4,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { MapPin} from "lucide-react";
 import Link from "next/link";
 import { JSX } from "react";
 
