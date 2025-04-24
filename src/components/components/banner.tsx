@@ -4,8 +4,6 @@ import Particles from "../ui/Particles";
 import { motion } from "motion/react";
 
 export default function Banner({ headline, subHeadline }: { headline: string, subHeadline: string }) {
-    
-    
     return (
         <section className="relative w-full h-screen">
             <div className="w-full absolute -top-1 h-5/12 

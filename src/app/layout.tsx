@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/components/themeProvider";
-import NavBar from "../components/components/navBar";
 import Footer from "@/components/components/footer";
+import ResizableNavbar from "@/components/components/resizableNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +36,7 @@ export default function RootLayout({
          enableSystem
          disableTransitionOnChange>
           <div className="flex flex-col min-h-screen">
-            <NavBar/>
+            <ResizableNavbar/>
             <div className="flex-grow container mx-auto">
               {children}
             </div>
