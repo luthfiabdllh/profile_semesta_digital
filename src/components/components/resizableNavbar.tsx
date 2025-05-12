@@ -11,11 +11,12 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import ModeToggle from "../ui/modeToggle";
+import Link from "next/link";
 
 export default function ResizableNavbar() {
   const navItems = [
-    {name: "Home", link: "#home"},
-    {name: "About", link: "#about"},
+    {name: "Home", link: "/"},
+    {name: "About", link: "/about"},
     {name: "Services", link: "#services"},
     {name: "Contact", link: "#contact"}
   ];
@@ -48,14 +49,14 @@ export default function ResizableNavbar() {
             onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="relative text-neutral-600 dark:text-neutral-300"
               >
                 <span className="block">{item.name}</span>
-              </a>
+              </Link>
             ))}
             <ModeToggle />
           </MobileNavMenu>
