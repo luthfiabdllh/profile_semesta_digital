@@ -2,8 +2,6 @@
 import Banner from "@/components/components/banner";
 import { Cta } from "@/components/components/cta";
 import { Logo } from "@/components/components/partnership";
-import SectionImage from "@/components/components/sectionImage";
-import { SectionTimeline } from "@/components/components/sectionTimeline";
 import ServicesCarousel from "@/components/components/ServiceCarousel";
 
 export default function Home() {

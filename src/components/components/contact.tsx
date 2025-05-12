@@ -1,5 +1,5 @@
 import { IconBrandWhatsapp } from "@tabler/icons-react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin} from "lucide-react";
 
 const Contact = () => {
   return (

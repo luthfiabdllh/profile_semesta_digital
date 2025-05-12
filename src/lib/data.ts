@@ -26,12 +26,12 @@ export type Services = {
   features: {
     title: string
     description: string
-    icon: React.ComponentType<any>
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   }[]
   benefits: {
     title: string
     description: string
-    icon: React.ComponentType<any>
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   }[]
   color: {
     primary: string

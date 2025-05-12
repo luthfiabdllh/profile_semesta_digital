@@ -121,7 +121,7 @@ const Cta = () => {
               The Best Data Solutions for Your Business
             </motion.h4>
             <motion.p className="text-muted-foreground" variants={itemVariants}>
-              Manage and optimize your company's data with cutting-edge technology to enhance efficiency and security.
+              Manage and optimize your company&apos;s data with cutting-edge technology to enhance efficiency and security.
             </motion.p>
             <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
               <Button className="mt-6 overflow-hidden">
