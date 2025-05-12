@@ -5,15 +5,11 @@ import { Badge } from "@/components/ui/badge"
 import { ChevronLeft } from "lucide-react"
 import Link from "next/link"
 import { services } from "@/lib/data"
+import { use } from "react"
 
-export function generateStaticParams() {
-  return services.map((service) => ({
-    id: service.id,
-  }))
-}
-
-export default function servicePage({ params }: { params: { id: string } }) {
-  const service = services.find((s) => s.id === params.id)
+export default function servicePage({params}: {params: Promise<{ id: string }>}) {
+  const { id } = use(params);
+  const service = services.find((s) => s.id === id)
 
   if (!service) {
     notFound()
