@@ -7,7 +7,7 @@ import Link from "next/link"
 import { services } from "@/lib/data"
 import { use } from "react"
 
-export default function servicePage({params}: {params: Promise<{ id: string }>}) {
+export default function ServicePage({params}: {params: Promise<{ id: string }>}) {
   const { id } = use(params);
   const service = services.find((s) => s.id === id)
 
