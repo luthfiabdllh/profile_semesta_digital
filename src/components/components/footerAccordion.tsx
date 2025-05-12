@@ -1,57 +1,90 @@
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
-import { MapPin} from "lucide-react";
-import Link from "next/link";
-import { JSX } from "react";
+"use client"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import type React from "react"
 
-import dynamic from "next/dynamic";
-const MapLocation = dynamic(() => import("../ui/mapLocation"), { ssr: false });
+import Link from "next/link"
+import { motion } from "framer-motion"
 
-
-interface Item {
-    icon?: JSX.Element;
-    text: string;
-    href: string;
+interface FooterAccordionProps {
+  accordionData: Array<{
+    value: string
+    trigger: string
+    contents: Array<{
+      icon?: React.ReactNode
+      text: string
+      href: string
+    }>
+  }>
 }
 
-interface AccordionData {
-    value: string;
-    trigger: string;
-    contents: Item[];
-}
+export default function FooterAccordion({ accordionData }: FooterAccordionProps) {
+  const accordionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+        delay: 0.3,
+      },
+    },
+  }
 
-export default function FooterAccordion({accordionData}: {accordionData: AccordionData[]}) {
-    return (
-        <div className="md:hidden">
-            <Accordion type="single" collapsible className="w-full">
-                {accordionData.map((item) => (
-                    <AccordionItem key={item.value} value={item.value}>
-                        <AccordionTrigger >{item.trigger}</AccordionTrigger>
-                        {item.contents.map((content, index) => (
-                            <AccordionContent key={index} className="flex my-2.5 space-x-2.5 items-center">
-                                {content.icon && content.icon}
-                                <Link href={content.href}>{content.text}</Link>
-                            </AccordionContent>
-                        ))}
-                    </AccordionItem>
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.1 + i * 0.05,
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+      },
+    }),
+    hover: {
+      scale: 1.05,
+      x: 5,
+      color: "hsl(var(--primary))",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10,
+      },
+    },
+  }
+
+  return (
+    <motion.div className="md:hidden" variants={accordionVariants} initial="hidden" animate="visible">
+      <Accordion type="single" collapsible className="w-full">
+        {accordionData.map((item) => (
+          <AccordionItem key={item.value} value={item.value}>
+            <AccordionTrigger className="text-lg font-semibold">{item.trigger}</AccordionTrigger>
+            <AccordionContent>
+              <ul className="space-y-3 pl-2">
+                {item.contents.map((content, index) => (
+                  <motion.li
+                    key={index}
+                    custom={index}
+                    variants={itemVariants}
+                    initial="hidden"
+                    animate="visible"
+                    whileHover="hover"
+                    className="flex items-center space-x-3.5"
+                  >
+                    {content.icon && <div>{content.icon}</div>}
+                    <Link href={content.href} className="hover:text-primary transition-colors">
+                      {content.text}
+                    </Link>
+                  </motion.li>
                 ))}
-            </Accordion>
-            <div>
-                <div className="flex flex-col items-center mt-5">
-                    <MapPin size={24} />
-                    <h2 className="text-2xl font-bold mt-2">Find Us</h2>
-                </div>
-                <div className="flex mb-5 space-x-3.5 mt-5">
-                    <div className="text-wrap text-center">
-                        <p>Jl Persatuan UH III/549, Jl. Celeban, Tahunan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55167</p>
-                        <MapLocation/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </motion.div>
+  )
 }
