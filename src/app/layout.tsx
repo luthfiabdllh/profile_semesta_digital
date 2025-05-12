@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "../components/components/themeProvider";
 import Footer from "@/components/components/footer";
 import ResizableNavbar from "@/components/components/resizableNavbar";
+import FloatingActionButton from "@/components/components/floatingActionButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
             <div className="flex-grow container mx-auto">
               {children}
             </div>
+            <FloatingActionButton />
             <Footer/>
           </div>
         </ThemeProvider>
