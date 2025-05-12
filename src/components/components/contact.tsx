@@ -11,7 +11,7 @@ const Contact = () => {
             Get in Touch with Our Friendly Team
           </h1>
           <p className="text-lg text-muted-foreground">
-            Need assistance? We're here to help! Reach out via email, visit our office, or contact us on WhatsApp
+            Need assistance? We&apos;re here to help! Reach out via email, visit our office, or contact us on WhatsApp
           </p>
         </div>
         <div className="grid gap-10 md:grid-cols-3">
