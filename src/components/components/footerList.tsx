@@ -13,9 +13,7 @@ interface FooterListProps {
   }>
 }
 
-export default function FooterList({ title, items }: FooterListProps) {
-  const { theme } = useTheme()
-  
+export default function FooterList({ title, items }: FooterListProps) {  
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: (i: number) => ({

@@ -1,17 +1,27 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import dynamic from "next/dynamic"
+import { useTheme } from "next-themes"
+import { color } from "framer-motion"
 
 // Dynamically import ECharts components to avoid SSR issues
 const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false })
 
 export default function StatisticsPage() {
-  const [activeTab, setActiveTab] = useState("overview")
+  const { theme, systemTheme } = useTheme() // Get current theme
+  const [sentimenMasyarakatOptions, setSentimenMasyarakatOptions] = useState({})
+  
+  // Determine if dark theme is active
+  const isDarkTheme = theme === 'dark' || (theme === 'system' && systemTheme === 'dark')
+  
+  // Label color based on theme
+  const labelColor = isDarkTheme ? "#fff" : "#000"
+  
 
   // Line chart options for Timeline Sentimen Masyarakat
   const timelineMasyarakatOptions = {
@@ -132,6 +142,7 @@ export default function StatisticsPage() {
   }
 
   // Pie chart options for Sentimen Masyarakat Terkait Berita
+  useEffect(() => {
   const sentimenMasyarakatOptions = {
     tooltip: {
       trigger: "item",
@@ -143,6 +154,7 @@ export default function StatisticsPage() {
       itemHeight: 10,
       textStyle: {
         fontSize: 10,
+        color: labelColor,
       },
     },
     series: [
@@ -150,22 +162,26 @@ export default function StatisticsPage() {
         name: "Sentimen Masyarakat",
         type: "pie",
         radius: [50, 200],
-        avoidLabelOverlap: false,
-        itemStyle: {
-          borderRadius: 10,
-          borderColor: "#fff",
-          borderWidth: 2,
-        },
+        avoidLabelOverlap: true,
+        // itemStyle: {
+        //   borderRadius: 10,
+        //   borderColor: "#fff",
+        //   borderWidth: 2,
+        // },
         center: ['50%', '50%'],
         roseType: 'area',
         label: {
           show: true,
+          position: "outside",
+          fontSize: 10,
+          color: labelColor,
         },
         emphasis: {
           label: {
             show: true,
             fontSize: 12,
             fontWeight: "bold",
+            color: labelColor,
           },
         },
         labelLine: {
@@ -184,6 +200,9 @@ export default function StatisticsPage() {
       },
     ],
   }
+  setSentimenMasyarakatOptions(sentimenMasyarakatOptions)
+    
+  }, [theme, systemTheme, labelColor])
 
   // Pie chart options for Sentimen Kepolisian Terkait Berita
   const sentimenKepolisianOptions = {
@@ -205,11 +224,11 @@ export default function StatisticsPage() {
         type: "pie",
         radius: ["40%", "70%"],
         avoidLabelOverlap: false,
-        itemStyle: {
-          borderRadius: 10,
-          borderColor: "#fff",
-          borderWidth: 2,
-        },
+        // itemStyle: {
+        //   borderRadius: 10,
+        //   borderColor: "#fff",
+        //   borderWidth: 2,
+        // },
         label: {
           show: false,
           position: "center",
@@ -306,7 +325,7 @@ export default function StatisticsPage() {
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold text-center mb-4">
-                  Gandeng YHMCHI, Lab "Pacar" Kembali Gelar Cek Medis Lengkap Bersubsidi
+                  Gandeng YHMCHI, Lab &quot;Pacar&quot; Kembali Gelar Cek Medis Lengkap Bersubsidi
                 </h3>
                 <div className="flex items-center text-sm text-gray-500 mb-4">
                   <span className="mr-2">Source:</span>
