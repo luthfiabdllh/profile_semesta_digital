@@ -1,8 +1,8 @@
 "use client"
 import Link from "next/link"
 import type React from "react"
-
 import { motion } from "framer-motion"
+import { useTheme } from "next-themes"
 
 interface FooterListProps {
   title: string
@@ -14,6 +14,8 @@ interface FooterListProps {
 }
 
 export default function FooterList({ title, items }: FooterListProps) {
+  const { theme } = useTheme()
+  
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: (i: number) => ({
@@ -29,7 +31,6 @@ export default function FooterList({ title, items }: FooterListProps) {
     hover: {
       scale: 1.05,
       x: 5,
-      color: "hsl(var(--primary))",
       transition: {
         type: "spring",
         stiffness: 400,
@@ -60,7 +61,10 @@ export default function FooterList({ title, items }: FooterListProps) {
             className="flex items-center space-x-3.5"
           >
             {item.icon && <div>{item.icon}</div>}
-            <Link href={item.href} className="hover:text-primary transition-colors">
+            <Link 
+              href={item.href} 
+              className="text-foreground dark:text-foreground hover:text-primary dark:hover:text-primary transition-colors"
+            >
               {item.text}
             </Link>
           </motion.li>
