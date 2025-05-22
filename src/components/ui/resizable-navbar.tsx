@@ -233,13 +233,13 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
+    <Link
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
        <Image  width={56} height={56} src="/logo.png" alt="Logo" />
       <span className="font-semibold text-lg whitespace-nowrap hidden sm:block text-black dark:text-white">Semesta Data Digital</span>
-    </a>
+    </Link>
   );
 };
 

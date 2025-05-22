@@ -56,7 +56,7 @@ export default function FloatingActionButton() {
   ]
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 flex flex-col-reverse items-center gap-3">
+    <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[1000] flex flex-col-reverse items-center gap-3">
       {isOpen && (
         <div className="flex flex-col-reverse gap-3">
           {actionButtons.map((button, i) => (

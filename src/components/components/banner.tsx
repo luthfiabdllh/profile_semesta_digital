@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export default function Banner({ headline, subHeadline }: { headline: string, subHeadline: string }) {
     return (
-        <section className="relative w-full h-screen">
+        <section id="hero" className="relative w-full h-screen">
             <div className="w-full absolute -top-1 h-5/12 
                 bg-gradient-to-b from-gray-100 via-blue-300 to-white 
                 dark:from-gray-950 dark:via-indigo-900 dark:to-black 

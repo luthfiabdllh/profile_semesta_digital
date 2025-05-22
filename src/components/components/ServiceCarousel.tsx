@@ -26,7 +26,7 @@ export default function ServiceCarousel() {
   });
 
   return (
-    <div className="w-full py-10 px-4 md:px-10">
+    <div id="services" className="w-full py-10 px-4 md:px-10">
       <div className="container mb-12 px-4 sm:px-6 flex flex-col text-left">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

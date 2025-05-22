@@ -98,6 +98,7 @@ export default function Footer() {
 
   return (
     <motion.nav
+      id="contact"
       className="w-full bg-background p-4"
       initial="hidden"
       whileInView="visible"

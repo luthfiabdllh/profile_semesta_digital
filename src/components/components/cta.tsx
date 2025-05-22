@@ -100,6 +100,7 @@ const Cta = () => {
 
   return (
     <motion.section
+      id="cta"
       className="py-32 max-w-screen-xl flex flex-col mx-auto space-y-10"
       initial="hidden"
       whileInView="visible"
