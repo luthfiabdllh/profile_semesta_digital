@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Plus, MessageCircle, Phone, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Link from "next/link" // Tambahkan import untuk Link component
 
 export default function FloatingActionButton() {
   const [isOpen, setIsOpen] = useState(false)
@@ -50,9 +51,24 @@ export default function FloatingActionButton() {
   }
 
   const actionButtons = [
-    { icon: <MessageCircle size={20} />, label: "Chat", color: "bg-green-500 hover:bg-green-600" },
-    { icon: <Phone size={20} />, label: "Call", color: "bg-blue-500 hover:bg-blue-600" },
-    { icon: <Mail size={20} />, label: "Email", color: "bg-purple-500 hover:bg-purple-600" },
+    { 
+      icon: <MessageCircle size={20} />, 
+      label: "Hubungi kami via WhatsApp", 
+      color: "bg-green-500 hover:bg-green-600",
+      href: "https://wa.me/6283124761723" 
+    },
+    { 
+      icon: <Phone size={20} />, 
+      label: "Hubungi kami via telepon", 
+      color: "bg-blue-500 hover:bg-blue-600",
+      href: "tel:+6283124761723" 
+    },
+    { 
+      icon: <Mail size={20} />, 
+      label: "Hubungi kami via email", 
+      color: "bg-purple-500 hover:bg-purple-600",
+      href: "mailto:contact@semestadatadigital.com" 
+    },
   ]
 
   return (
@@ -60,22 +76,27 @@ export default function FloatingActionButton() {
       {isOpen && (
         <div className="flex flex-col-reverse gap-3">
           {actionButtons.map((button, i) => (
-            <motion.button
+           <motion.div
               key={i}
-              className={cn(
-                "flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg",
-                button.color,
-              )}
               initial="closed"
               animate="open"
               variants={childButtonVariants}
               custom={i}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={button.label}
             >
-              {button.icon}
-            </motion.button>
+              <Link
+                href={button.href}
+                className={cn(
+                  "flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg",
+                  button.color,
+                )}
+                aria-label={button.label}
+                title={button.label}
+                target="_blank"                
+                rel={button.href.startsWith('http') ? "noopener noreferrer" : undefined}
+              >
+                {button.icon}
+              </Link>
+            </motion.div>
           ))}
         </div>
       )}
@@ -88,7 +109,8 @@ export default function FloatingActionButton() {
         whileHover={{ scale: 1.1 }}
         whileTap="tap"
         variants={mainButtonVariants}
-        aria-label="Open actions menu"
+        aria-label="Menu kontak"
+        aria-expanded={isOpen}
       >
         <Plus size={24} className={cn("transition-transform duration-300", isOpen && "rotate-45")} />
       </motion.button>
