@@ -70,7 +70,7 @@ export default function ServiceCarousel() {
                   viewport={{ once: true }}
                   className="h-full"
                 >
-                  <Card
+                  {/* <Card
                     className={cn(
                       "overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer h-full",
                     )}
@@ -108,6 +108,59 @@ export default function ServiceCarousel() {
                           {service.title}
                         </h3>
                         <p className="text-slate-600 line-clamp-3 flex-grow">{service.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card> */}
+                  <Card
+                    className={cn(
+                      "overflow-hidden border-none shadow-lg hover:shadow-xl transition-all py-0 duration-300 cursor-pointer h-87 relative ",
+                    )}
+                    onClick={() => handleCardClick(service.id)}
+                  >
+                    <CardContent className="p-0 flex flex-col h-full relative">
+                      {/* Full card background image */}
+                      <div className="absolute inset-0 w-full h-full">
+                        <Image
+                          src={service.heroImage || "/placeholder.svg"}
+                          alt={service.title}
+                          fill
+                          className="object-cover"
+                          priority
+                        />
+                        {/* Gradient overlay filter */}
+                        <div 
+                          className="absolute inset-0 z-10"
+                          style={{
+                            background: `linear-gradient(to bottom, 
+                              rgba(0, 0, 0, 0.7), 
+                              rgba(0, 0, 0, 0.4)), 
+                              linear-gradient(to bottom right, 
+                              var(--${service.color.primary}-600), 
+                              var(--${service.color.secondary}-500))`,
+                            opacity: 0.85,
+                          }}
+                        />
+                      </div>
+                      
+                      {/* Content positioned at the bottom over the image */}
+                      <div className="p-5 flex flex-col justify-end relative z-20 h-full">
+                        <div className="bg-black/40 backdrop-blur-sm -mx-5 -mb-5 p-5 rounded-b-lg">
+                          <Badge
+                            className="mb-3 self-start" 
+                            style={{
+                              backgroundColor: `var(--${service.color.accent}-100)`,
+                              color: `var(--${service.color.primary}-700)`,
+                            }}
+                          >
+                            {service.badge}
+                          </Badge>
+                          <h3
+                            className="text-xl font-bold mb-3 text-white"
+                          >
+                            {service.title}
+                          </h3>
+                          <p className="text-white/90">{service.description}</p>
+                        </div>
                       </div>
                     </CardContent>
                   </Card>

@@ -12,7 +12,7 @@ export default function SectionImage({ imageRight, background, title, subtitle, 
             <div className={`relative z-10 flex flex-col-reverse ${imageRight === true ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-12`}>
                 <div className="text-center md:text-left">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold">{title}</h2>
-                    <p className="text-neutral-600 dark:text-neutral-400 mt-6 max-w-md">{subtitle}</p>
+                    <div className="text-neutral-600 dark:text-neutral-400 mt-6 max-w-md">{subtitle}</div>
                 </div>
                 <Image
                     src={srcImage || "/default-image-path.jpg"}

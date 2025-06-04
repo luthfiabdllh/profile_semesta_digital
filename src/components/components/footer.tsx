@@ -15,13 +15,12 @@ export default function Footer() {
     { text: "About Us", href: "/about" }, // icon kosong
   ]
 
-  const services = [
-    { text: "Venture Capital & Startup Investment", href: "/about" },
-    { text: "Big Data & AI Solutions", href: "/about" },
-    { text: "Digital Transformation Consulting", href: "/about" },
-    { text: "Talent Management & Tech Training ", href: "/about" },
-    { text: "Enterprise Solutions & IT Consulting", href: "/about" },
-  ]
+const services = [
+  { text: "Venture Capital & Startup Mentorship", href: "/services/venture-capital" },
+  { text: "Digital Transformation Consulting", href: "/services/digital-transformation" },
+  { text: "Talent Management & Development", href: "/services/talent-management" },
+  { text: "Custom ICT Solutions", href: "/services/custom-ict-solutions" },
+]
 
   const accordionData = [
     {
