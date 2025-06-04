@@ -6,6 +6,47 @@ import { ChevronLeft } from "lucide-react"
 import Link from "next/link"
 import { services } from "@/lib/data"
 import { use } from "react"
+import type { Metadata } from "next"
+
+export async function generateMetadata({ params }: { params: { id: string }}): Promise<Metadata> {
+  const service = services.find((s) => s.id === params.id);
+  
+  if (!service) {
+    return {
+      title: "Layanan Tidak Ditemukan | Semesta Data Digital",
+      description: "Maaf, layanan yang Anda cari tidak ditemukan di Semesta Data Digital",
+    };
+  }
+  
+  return {
+    title: `${service.title} | Semesta Data Digital`,
+    description: service.longDescription,
+    keywords: [service.badge, ...service.title.split(" "), "semesta data digital", "layanan teknologi", "solusi digital"],
+    alternates: {
+      canonical: `https://semestadatadigital.com/services/${params.id}`,
+    },
+    openGraph: {
+      title: service.title,
+      description: service.description,
+      type: "website",
+      url: `https://semestadatadigital.com/services/${params.id}`,
+      images: [
+        {
+          url: service.heroImage || "/placeholder.svg",
+          width: 1200,
+          height: 630,
+          alt: `${service.title} - Semesta Data Digital`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.title,
+      description: service.description,
+      images: [service.heroImage || "/placeholder.svg"],
+    },
+  };
+}
 
 export default function ServicePage({params}: {params: Promise<{ id: string }>}) {
   const { id } = use(params);
@@ -16,6 +57,25 @@ export default function ServicePage({params}: {params: Promise<{ id: string }>})
   }
 
   return (
+    <>
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            name: service.title,
+            description: service.longDescription,
+            provider: {
+              '@type': 'Organization',
+              name: 'Semesta Data Digital',
+              url: 'https://semestadatadigital.com',
+            },
+            serviceType: service.badge,
+            image: service.heroImage || "/placeholder.svg",
+          }),
+        }}
+    />
     <main className="min-h-screen">
       {/* Hero Section */}
       <section
@@ -54,8 +114,10 @@ export default function ServicePage({params}: {params: Promise<{ id: string }>})
             <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-xl">
               <Image
                 src={service.heroImage || "/placeholder.svg"}
-                alt={service.title}
+                alt={`Fitur ${service.title} - Semesta Data Digital`}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
                 className="object-cover"
               />
             </div>
@@ -68,6 +130,7 @@ export default function ServicePage({params}: {params: Promise<{ id: string }>})
         <h2
           className="text-2xl md:text-3xl font-bold mb-12 text-center"
           style={{ color: `var(--${service.color.primary}-800)` }}
+          id="features-section"
         >
           Features of {service.title}
         </h2>
@@ -107,8 +170,10 @@ export default function ServicePage({params}: {params: Promise<{ id: string }>})
           <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl order-1 md:order-2">
             <Image
               src={service.featuresImage || "/placeholder.svg"}
-              alt={`${service.title} Features`}
+              alt={`Features ${service.title} - Semesta Data Digital`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
               className="object-cover"
             />
           </div>
@@ -121,6 +186,7 @@ export default function ServicePage({params}: {params: Promise<{ id: string }>})
           <h2
             className="text-2xl md:text-3xl font-bold mb-12 text-center"
             style={{ color: `var(--${service.color.primary}-800)` }}
+            id="benefits-section"
           >
             Benefits of {service.title}
           </h2>
@@ -129,8 +195,10 @@ export default function ServicePage({params}: {params: Promise<{ id: string }>})
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
               <Image
                 src={service.benefitsImage || "/placeholder.svg"}
-                alt={`${service.title} Benefits`}
+                alt={`Benefit ${service.title} - Semesta Data Digital`}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
                 className="object-cover"
               />
             </div>
@@ -167,5 +235,6 @@ export default function ServicePage({params}: {params: Promise<{ id: string }>})
         </div>
       </section>
     </main>
+    </>
   )
 }
