@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useTheme } from "next-themes"
+import { color } from "framer-motion"
 
 // Dynamically import ECharts components to avoid SSR issues
 const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false })
@@ -14,14 +15,15 @@ const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false })
 export default function StatisticsPage() {
   const { theme, systemTheme } = useTheme() // Get current theme
   const [sentimenMasyarakatOptions, setSentimenMasyarakatOptions] = useState({})
+  const [sentimenKepolisianOptions, setSentimenKepolisianOptions] = useState({})
   
   // Determine if dark theme is active
   const isDarkTheme = theme === 'dark' || (theme === 'system' && systemTheme === 'dark')
   
   // Label color based on theme
-  const labelColor = isDarkTheme ? "#fff" : "#000"
+  const labelColor = isDarkTheme ? "#ffffff" : "#000"
+  const borderColor = isDarkTheme ? "#0f172b" : "#ffffff"
   
-
   // Line chart options for Timeline Sentimen Masyarakat
   const timelineMasyarakatOptions = {
     grid: {
@@ -162,11 +164,6 @@ export default function StatisticsPage() {
         type: "pie",
         radius: [50, 200],
         avoidLabelOverlap: true,
-        // itemStyle: {
-        //   borderRadius: 10,
-        //   borderColor: "#fff",
-        //   borderWidth: 2,
-        // },
         center: ['50%', '50%'],
         roseType: 'area',
         label: {
@@ -204,6 +201,7 @@ export default function StatisticsPage() {
   }, [theme, systemTheme, labelColor])
 
   // Pie chart options for Sentimen Kepolisian Terkait Berita
+    useEffect(() => {
   const sentimenKepolisianOptions = {
     tooltip: {
       trigger: "item",
@@ -215,6 +213,7 @@ export default function StatisticsPage() {
       itemHeight: 10,
       textStyle: {
         fontSize: 10,
+        color: labelColor,
       },
     },
     series: [
@@ -223,11 +222,11 @@ export default function StatisticsPage() {
         type: "pie",
         radius: ["40%", "70%"],
         avoidLabelOverlap: false,
-        // itemStyle: {
-        //   borderRadius: 10,
-        //   borderColor: "#fff",
-        //   borderWidth: 2,
-        // },
+        itemStyle: {
+          borderRadius: 10,
+          borderColor: borderColor,
+          borderWidth: 8,
+        },
         label: {
           show: false,
           position: "center",
@@ -252,6 +251,9 @@ export default function StatisticsPage() {
       },
     ],
   }
+  setSentimenKepolisianOptions(sentimenKepolisianOptions)
+    
+  }, [theme, systemTheme, labelColor, borderColor])
 
   return (
     <main className="container mx-auto py-6 px-4 mt-20" >
