@@ -255,10 +255,10 @@ export default function StatisticsPage() {
   }, [theme, systemTheme, labelColor, borderColor])
 
   return (
-    <main className="container mx-auto py-6 px-4 mt-20" >
+<main className="container mx-auto py-6 px-4 mt-20" aria-labelledby="main-heading">
       <Card className="mb-6">
         <CardContent className="pt-6">
-          <h1 className="text-2xl font-bold mb-2">Statistik Data</h1>
+          <h1 id="main-heading" className="text-2xl font-bold mb-2">Statistik Data</h1>
           <p className="text-gray-600 text-sm">
             Statistika data umum berita terkini sesuai topik pilihan. Meliputi grafik sentimen timeline dan pie chart,
             serta redaksi berita lengkap.
@@ -269,97 +269,120 @@ export default function StatisticsPage() {
       <Card className="mb-6">
         <CardContent className="flex flex-col items-center justify-center py-8">
           <h2 className="text-lg font-medium text-gray-500 mb-2">Jumlah Artikel Berita</h2>
-          <span className="text-5xl font-bold">18</span>
+          <span className="text-5xl font-bold" aria-label="18 artikel berita">18</span>
         </CardContent>
       </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <Card>
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-center">Timeline Sentimen Masyarakat Berita</CardTitle>
+            <CardTitle className="text-sm font-medium text-center" id="timeline-masyarakat">Timeline Sentimen Masyarakat Berita</CardTitle>
           </CardHeader>
           <CardContent>
-            <ReactECharts option={timelineMasyarakatOptions} style={{ height: "250px" }} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-center">Timeline Sentimen Kepolisian Berita</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ReactECharts option={timelineKepolisianOptions} style={{ height: "250px" }} />
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-center">Sentimen Masyarakat Terkait Berita</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ReactECharts option={sentimenMasyarakatOptions} style={{ height: "500px" }} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-center">Sentimen Kepolisian Terkait Berita</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ReactECharts option={sentimenKepolisianOptions} style={{ height: "500px" }} />
-          </CardContent>
-        </Card>
-      </div>
-
-      <Card>
-        <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium text-center">Semua Berita Terbaru</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <div className="border rounded-lg overflow-hidden">
-              <div className="relative h-64 w-full">
-                <Image src="/placeholder.svg?height=400&width=800" alt="Berita terbaru" fill className="object-cover" />
-              </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-center mb-4">
-                  Gandeng YHMCHI, Lab &quot;Pacar&quot; Kembali Gelar Cek Medis Lengkap Bersubsidi
-                </h3>
-                <div className="flex items-center text-sm text-gray-500 mb-4">
-                  <span className="mr-2">Source:</span>
-                  <Badge variant="outline" className="font-normal">
-                    global-news.co.id
-                  </Badge>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <Badge variant="secondary">Sentimen Kepolisian: Netral</Badge>
-                  <Badge variant="secondary">Sentimen Masyarakat: Positif</Badge>
-                  <Badge variant="secondary">Diunggah: 2025-04-27T00:00:00+07:00</Badge>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <Badge variant="outline">Rekomendasi Tanggapan</Badge>
-                  <Badge variant="outline">Ubah Data Sentimen</Badge>
-                </div>
-                <p className="text-gray-700 text-sm">
-                  SURABAYA (global-news.co.id)- Masjid Cheng Ho Surabaya kembali untuk kesekian kalinya menjadi tempat
-                  bakti sosial medical check up. Bertempat di Gedung Laboratorium PACAR Surabaya, Yayasan Haji Muhammadi
-                  Cheng Ho Indonesia (YHMCHI) kembali mengelar general medical check up selama 2 hari, Sabtu dan Minggu
-                  26-27 April 2025. Selama dua hari pemeriksaan kesehatan dimulai pukul 07.00 WIB dan berlangsung hingga
-                  pukul 11.00 WIB. Meski dimulai pukul 07.00, namun warga yang ingin mengikuti pemeriksaan kesehatan
-                  sudah tiba sebelum dibuka...
-                </p>
-                <div className="flex justify-end mt-4">
-                  <Button variant="outline" size="sm">
-                    Baca Selengkapnya
-                  </Button>
-                </div>
-              </div>
+            <div aria-labelledby="timeline-masyarakat">
+              <ReactECharts option={timelineMasyarakatOptions} style={{ height: "250px" }} />
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-center" id="timeline-kepolisian">Timeline Sentimen Kepolisian Berita</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div aria-labelledby="timeline-kepolisian">
+              <ReactECharts option={timelineKepolisianOptions} style={{ height: "250px" }} />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-center" id="pie-masyarakat">Sentimen Masyarakat Terkait Berita</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div aria-labelledby="pie-masyarakat">
+              <ReactECharts option={sentimenMasyarakatOptions} style={{ height: "500px" }} />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-center" id="pie-kepolisian">Sentimen Kepolisian Terkait Berita</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div aria-labelledby="pie-kepolisian">
+              <ReactECharts option={sentimenKepolisianOptions} style={{ height: "500px" }} />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <section aria-labelledby="berita-terbaru">
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-center" id="berita-terbaru">Semua Berita Terbaru</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              <article className="border rounded-lg overflow-hidden">
+                <div className="relative h-64 w-full">
+                  <Image 
+                    src="/placeholder.svg?height=400&width=800" 
+                    alt="Berita tentang YHMCHI dan Lab Pacar yang menggelar cek medis lengkap bersubsidi" 
+                    fill 
+                    className="object-cover" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-xl font-bold text-center mb-4">
+                    Gandeng YHMCHI, Lab &quot;Pacar&quot; Kembali Gelar Cek Medis Lengkap Bersubsidi
+                  </h3>
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <span className="mr-2">Source:</span>
+                    <Badge variant="outline" className="font-normal">
+                      global-news.co.id
+                    </Badge>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="secondary">Sentimen Kepolisian: Netral</Badge>
+                    <Badge variant="secondary">Sentimen Masyarakat: Positif</Badge>
+                    <Badge variant="secondary">
+                      <time dateTime="2025-04-27T00:00:00+07:00">Diunggah: 27 April 2025</time>
+                    </Badge>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <Badge variant="outline">Rekomendasi Tanggapan</Badge>
+                    <Badge variant="outline">Ubah Data Sentimen</Badge>
+                  </div>
+                  <p className="text-gray-700 text-sm">
+                    SURABAYA (global-news.co.id)- Masjid Cheng Ho Surabaya kembali untuk kesekian kalinya menjadi tempat
+                    bakti sosial medical check up. Bertempat di Gedung Laboratorium PACAR Surabaya, Yayasan Haji Muhammadi
+                    Cheng Ho Indonesia (YHMCHI) kembali mengelar general medical check up selama 2 hari, Sabtu dan Minggu
+                    26-27 April 2025. Selama dua hari pemeriksaan kesehatan dimulai pukul 07.00 WIB dan berlangsung hingga
+                    pukul 11.00 WIB. Meski dimulai pukul 07.00, namun warga yang ingin mengikuti pemeriksaan kesehatan
+                    sudah tiba sebelum dibuka...
+                  </p>
+                  <div className="flex justify-end mt-4">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      aria-label="Baca berita selengkapnya tentang Lab Pacar dan YHMCHI"
+                    >
+                      Baca Selengkapnya
+                    </Button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
     </main>
   )
 }
