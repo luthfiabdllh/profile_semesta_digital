@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useTheme } from "next-themes"
-import { color } from "framer-motion"
 
 // Dynamically import ECharts components to avoid SSR issues
 const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false })
