@@ -12,6 +12,19 @@ import {
   Cpu,
   Server,
   Users,
+  BrainCircuit,
+  DollarSign,
+  Network,
+  Gauge,
+  Settings,
+  Lightbulb,
+  BookOpen,
+  GraduationCap,
+  Award,
+  Code,
+  Target,
+  Rocket,
+  Puzzle
 } from "lucide-react"
 
 export type Services = {
@@ -43,50 +56,50 @@ export type Services = {
 
 export const services: Services[] = [
   {
-    id: "big-data-ai",
-    title: "Big Data & Artificial Intelligence Solutions",
-    badge: "Enterprise Solutions",
+    id: "venture-capital",
+    title: "Venture Capital & Startup Mentorship",
+    badge: "Investment & Support",
     description:
-      "Leverage data-driven insights for smarter decision-making with our comprehensive Big Data & AI solutions.",
+      "Empowering startups and entrepreneurs with the resources and expertise needed to succeed.",
     longDescription:
-      "Our Big Data & Artificial Intelligence Solutions help businesses and organizations leverage data-driven insights for smarter decision-making. We provide end-to-end services, including data collection, warehousing, visualization, and AI-driven analysis, enabling clients to optimize operations, understand market trends, and enhance strategic planning. With expertise in machine learning, predictive analytics, and automation, we develop tailored solutions for industries such as finance, healthcare, smart cities, and e-commerce. By integrating advanced AI models with big data processing, we empower businesses to unlock new opportunities, improve efficiency, and stay ahead in an increasingly digital world.",
-    heroImage: "/placeholder.svg?height=500&width=600",
-    featuresImage: "/placeholder.svg?height=600&width=800",
-    benefitsImage: "/placeholder.svg?height=600&width=800",
+      "PT Semesta Data Digital supports the growth of Indonesia's tech ecosystem through venture capital investment and startup mentorship. We provide not only funding but also strategic guidance to help entrepreneurs and researchers transform innovative ideas into impactful solutions. With our industry expertise and extensive network, we serve as a trusted partner for building sustainable, competitive businesses.",
+    heroImage: "/images/services/CarouselVentureCapitalStartupMentorship.webp",
+    featuresImage: "/images/services/BenefitsVentureCapital&StartupMentorship.webp",
+    benefitsImage: "/images/services/FeaturesVentureCapital&StartupMentorship.webp",
     features: [
       {
-        title: "Data Crawling & Warehousing",
-        description: "Collecting and storing data from various sources for further analysis.",
-        icon: Database,
+        title: "Funding for early-stage and growth-stage startups",
+        description: "Providing financial support to help startups grow and succeed.",
+        icon: DollarSign,
       },
       {
-        title: "Data Visualization & Collaboration Analysis",
-        description: "Presenting data in easy-to-understand visual formats and enabling data-driven collaboration.",
-        icon: BarChart2,
+        title: "Strategic business mentoring",
+        description: "Offering guidance on business strategy, market fit, and growth planning.",
+        icon: BrainCircuit,
       },
       {
-        title: "Predictive Analytics & Machine Learning",
-        description: "Analyzing patterns and trends to generate accurate business and organizational predictions.",
-        icon: LineChart,
+        title: "Access to professional and academic networks",
+        description: "Connecting startups with industry experts, mentors, and potential partners.",
+        icon: Network,
       },
     ],
     benefits: [
       {
-        title: "Supports Data Driven Decision Making",
+        title: "Accelerates startup growth and innovation",
         description:
-          "Enables businesses and organizations to make more accurate and strategic decisions based on data analysis.",
-        icon: CheckCircle,
+          "Provides startups with the resources and expertise needed to scale their operations and innovate.",
+        icon: LineChart,
       },
       {
-        title: "Enhances Operational Efficiency",
+        title: "Reduces risks through expert mentorship",
         description:
-          "Optimizes business processes through automation and AI-driven predictions, saving time and resources.",
-        icon: Zap,
+          "Helps startups navigate challenges and avoid common pitfalls with experienced guidance.",
+        icon: Shield,
       },
       {
-        title: "Monitors Market Trends and Consumer Behavior",
+        title: "Strengthens business strategy and scalability",
         description:
-          "Provides insights into industry trends and customer preferences to support marketing strategies and product innovation.",
+          "Enhances the startup's business model and scalability through strategic planning and execution.",
         icon: TrendingUp,
       },
     ],
@@ -98,104 +111,104 @@ export const services: Services[] = [
     },
   },
   {
-    id: "cloud-computing",
-    title: "Cloud Computing Services",
-    badge: "Infrastructure Solutions",
-    description: "Scale your business with flexible, secure, and cost-effective cloud computing solutions.",
+    id: "digital-transformation",
+    title: "Digital Transformation Consulting",
+    badge: "Strategic Solutions",
+    description: "Transform your business with data-driven digital strategies.",
     longDescription:
-      "Our Cloud Computing Services provide businesses with scalable, reliable, and secure infrastructure solutions. We offer comprehensive cloud migration, management, and optimization services that help organizations reduce costs, improve operational efficiency, and enhance business agility. Our team of certified cloud experts designs and implements custom cloud architectures tailored to your specific business needs, whether you're looking for public, private, or hybrid cloud solutions. We support all major cloud platforms including AWS, Azure, and Google Cloud, ensuring seamless integration with your existing systems and applications. With our managed cloud services, you can focus on your core business while we handle the complexities of cloud infrastructure management.",
+      "We assist organizations in crafting and implementing effective digital transformation strategies. Using a human-centered and data-driven approach, we assess data readiness, business processes, and analytics capabilities to develop tailored solutions that support operational excellence and innovation.",
     heroImage: "/placeholder.svg?height=500&width=600",
-    featuresImage: "/placeholder.svg?height=600&width=800",
-    benefitsImage: "/placeholder.svg?height=600&width=800",
+    featuresImage: "/images/services/FeaturesDigitalTransformationConsulting.webp",
+    benefitsImage: "/images/services/BenefitsDigitalTransformationConsulting.webp",
     features: [
       {
-        title: "Cloud Migration & Integration",
+        title: "Digital readiness assessment",
         description:
-          "Seamlessly migrate your existing infrastructure and applications to the cloud with minimal disruption.",
-        icon: Cloud,
+          "Evaluating your organization's current digital capabilities and identifying areas for improvement.",
+        icon: Gauge,
       },
       {
-        title: "Multi-Cloud Management",
+        title: "Data flow mapping and system integration",
         description:
-          "Unified management of resources across multiple cloud platforms for optimal performance and cost efficiency.",
-        icon: Server,
+          "Designing and implementing seamless data flows between systems to enhance operational efficiency.",
+        icon: Network,
       },
       {
-        title: "Cloud Security & Compliance",
-        description: "Comprehensive security measures and compliance frameworks to protect your data in the cloud.",
-        icon: Shield,
+        title: "Technology ecosystem recommendation",
+        description: "Identifying and recommending the right technologies to support your digital transformation.",
+        icon: Settings,
       },
     ],
     benefits: [
       {
-        title: "Reduced Infrastructure Costs",
-        description: "Eliminate capital expenses and reduce operational costs with pay-as-you-go pricing models.",
+        title: "Enhances efficiency and productivity",
+        description: "Streamlines processes and automates workflows to improve overall performance.",
         icon: Zap,
       },
       {
-        title: "Enhanced Scalability",
-        description: "Easily scale resources up or down based on demand, ensuring optimal performance at all times.",
-        icon: TrendingUp,
+        title: "Ensures strategic alignment of digital initiatives",
+        description: "Aligns digital transformation efforts with business goals for maximum impact.",
+        icon: Target,
       },
       {
-        title: "Improved Business Continuity",
+        title: "Supports long-term innovation",
         description:
-          "Robust disaster recovery and backup solutions to ensure your business operations continue without interruption.",
-        icon: CheckCircle,
+          "Fosters a culture of innovation by integrating advanced technologies and data analytics into operations.",
+        icon: Lightbulb,
       },
     ],
     color: {
-      primary: "cyan",
-      secondary: "teal",
-      accent: "emerald",
-      light: "cyan-50",
+      primary: "emerald",
+      secondary: "green",
+      accent: "teal",
+      light: "emerald-50",
     },
   },
   {
-    id: "digital-transformation",
-    title: "Digital Transformation",
-    badge: "Strategic Solutions",
+    id: "talent-management",
+    title: "Talent Management & Development",
+    badge: "Human Capital Solutions",
     description:
-      "Reimagine your business processes and customer experiences with comprehensive digital transformation.",
+      "Empowering organizations with strategic talent management and development solutions.",
     longDescription:
-      "Our Digital Transformation services help organizations evolve in the digital age by reimagining business processes, customer experiences, and operational models. We provide end-to-end transformation strategies that leverage cutting-edge technologies to drive innovation and competitive advantage. Our approach combines technology implementation with organizational change management to ensure successful adoption and sustainable results. We work closely with your team to identify opportunities for digital enhancement, develop a roadmap for implementation, and execute the transformation journey. From process automation and customer experience redesign to new business model development, we help you navigate the complexities of digital transformation to achieve tangible business outcomes.",
+      "With academic roots, we are committed to nurturing digital talent through hands-on training, applied research, and real-world experience. Our programs are designed to develop professionals who are skilled, adaptable, and ready to contribute to the evolving demands of the technology industry.",
     heroImage: "/placeholder.svg?height=500&width=600",
-    featuresImage: "/placeholder.svg?height=600&width=800",
-    benefitsImage: "/placeholder.svg?height=600&width=800",
+    featuresImage: "/images/services/FeaturesTalentManagement&Development.webp",
+    benefitsImage: "/images/services/BenefitsTalentManagement&Development.webp",
     features: [
       {
-        title: "Business Process Automation",
-        description: "Streamline and automate manual processes to improve efficiency and reduce operational costs.",
-        icon: Cpu,
+        title: "Project-based learning programs",
+        description: "Hands-on projects that simulate real-world challenges and foster practical skills.",
+        icon: BookOpen,
       },
       {
-        title: "Customer Experience Redesign",
+        title: "Research collaboration and internship opportunities",
         description:
-          "Create seamless, personalized digital experiences that enhance customer satisfaction and loyalty.",
+          "Connecting students and professionals with industry partners for research and internships.",
         icon: Users,
       },
       {
-        title: "Digital Strategy Development",
-        description: "Comprehensive roadmap for leveraging digital technologies to achieve business objectives.",
-        icon: Globe,
+        title: "Professional skills development workshops",
+        description: "Workshops focused on enhancing soft skills, leadership, and career readiness.",
+        icon: GraduationCap,
       },
     ],
     benefits: [
       {
-        title: "Increased Operational Efficiency",
-        description: "Streamlined processes and automated workflows that reduce costs and improve productivity.",
-        icon: Zap,
+        title: "Builds future-ready digital workforce",
+        description: "Equips individuals with the skills needed to thrive in the digital economy.",
+        icon: Rocket,
       },
       {
-        title: "Enhanced Customer Engagement",
+        title: "Reduces skill gaps in the tech industry",
         description:
-          "Improved customer experiences across all digital touchpoints, leading to higher satisfaction and retention.",
-        icon: Users,
+          "Addresses the shortage of skilled professionals by providing targeted training and development.",
+        icon: Puzzle,
       },
       {
-        title: "Accelerated Innovation",
-        description: "Faster development and deployment of new products, services, and business models.",
-        icon: TrendingUp,
+        title: "Enhances employee engagement and performance",
+        description: "Fosters a culture of innovation by integrating advanced technologies and data analytics into operations.",
+        icon: Award,
       },
     ],
     color: {
@@ -205,59 +218,58 @@ export const services: Services[] = [
       light: "purple-50",
     },
   },
-    {
-    id: "cld-computing",
-    title: "Cloud Computing Services",
-    badge: "Infrastructure Solutions",
-    description: "Scale your business with flexible, secure, and cost-effective cloud computing solutions.",
+  {
+    id: "custom-ict-solutions",
+    title: "Custom ICT (Information and Communication Technology) Solutions",
+    badge: "Tailored ICT Solutions",
+    description: "Delivering customized ICT solutions for diverse sectors.",
     longDescription:
-      "Our Cloud Computing Services provide businesses with scalable, reliable, and secure infrastructure solutions. We offer comprehensive cloud migration, management, and optimization services that help organizations reduce costs, improve operational efficiency, and enhance business agility. Our team of certified cloud experts designs and implements custom cloud architectures tailored to your specific business needs, whether you're looking for public, private, or hybrid cloud solutions. We support all major cloud platforms including AWS, Azure, and Google Cloud, ensuring seamless integration with your existing systems and applications. With our managed cloud services, you can focus on your core business while we handle the complexities of cloud infrastructure management.",
-    heroImage: "/placeholder.svg?height=500&width=600",
-    featuresImage: "/placeholder.svg?height=600&width=800",
-    benefitsImage: "/placeholder.svg?height=600&width=800",
+      "We deliver customized ICT solutions tailored to the specific needs of businesses and institutions. From system development and data integration to dashboard creation and visualization, our solutions are designed to enhance functionality, improve efficiency, and support data-driven operations across sectors such as government, logistics, smart cities, and public safety.",
+    heroImage: "/images/services/CarouselCustomICTSolutions1.webp",
+    featuresImage: "/images/services/FeaturesCustomICTSolutions.webp",
+    benefitsImage: "/images/services/BenefitsCustomICTSolutions.webp",
     features: [
       {
-        title: "Cloud Migration & Integration",
+        title: "Custom system and platform development",
         description:
-          "Seamlessly migrate your existing infrastructure and applications to the cloud with minimal disruption.",
-        icon: Cloud,
+          "Tailored development of systems and platforms to meet specific business requirements.",
+        icon: Code,
       },
       {
-        title: "Multi-Cloud Management",
+        title: "Database and dashboard integration",
         description:
-          "Unified management of resources across multiple cloud platforms for optimal performance and cost efficiency.",
-        icon: Server,
+          "Integrating databases and creating dashboards for real-time data visualization and reporting.",
+        icon: Database,
       },
       {
-        title: "Cloud Security & Compliance",
-        description: "Comprehensive security measures and compliance frameworks to protect your data in the cloud.",
-        icon: Shield,
+        title: "Real-time data streaming and visualization",
+        description: "Implementing real-time data streaming solutions for immediate insights.",
+        icon: BarChart2,
       },
     ],
     benefits: [
       {
-        title: "Reduced Infrastructure Costs",
-        description: "Eliminate capital expenses and reduce operational costs with pay-as-you-go pricing models.",
+        title: "Improves operational efficiency and responsiveness",
+        description: "Custom solutions streamline processes and enhance decision-making capabilities.",
         icon: Zap,
       },
       {
-        title: "Enhanced Scalability",
-        description: "Easily scale resources up or down based on demand, ensuring optimal performance at all times.",
-        icon: TrendingUp,
+        title: "Enables real-time insights and monitoring",
+        description: "Provides immediate access to critical data for timely decision-making.",
+        icon: LineChart,
       },
       {
-        title: "Improved Business Continuity",
+        title: "Supports informed decision-making",
         description:
-          "Robust disaster recovery and backup solutions to ensure your business operations continue without interruption.",
-        icon: CheckCircle,
+          "Custom ICT solutions provide the data and insights needed for effective decision-making.",
+        icon: Target,
       },
     ],
     color: {
-      primary: "cyan",
-      secondary: "teal",
-      accent: "emerald",
-      light: "cyan-50",
+      primary: "amber",
+      secondary: "orange",
+      accent: "yellow",
+      light: "amber-50",
     },
   },
-  
 ]
