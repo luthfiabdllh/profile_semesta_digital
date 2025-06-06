@@ -4,8 +4,8 @@ import { SectionTimeline } from "@/components/components/sectionTimeline";
 export default function About() {
     return (
         <>
-            <SectionImage background="Vision" title="Our Vision" subtitle="To become a leading data and artificial intelligence (AI) technology company, excelling in the implementation of products based on academic research, creating impactful social analytics solutions, enabling data-driven decision-making, contributing to the development of digital talent and future technologies, and evolving into a funding company that supports innovation and the growth of data-driven startups." srcImage="https://assets.aceternity.com/templates/startup-2.webp" altImage="Vision Image"/>
-            <SectionImage imageRight={true} background="Mission" title="Our Mission"  
+            <SectionImage background="Vision" title="Our Vision" subtitle="To become a leading data and artificial intelligence (AI) technology company, excelling in the implementation of products based on academic research, creating impactful social analytics solutions, enabling data-driven decision-making, contributing to the development of digital talent and future technologies, and evolving into a funding company that supports innovation and the growth of data-driven startups."/>
+            <SectionImage background="Mission" title="Our Mission"  
             subtitle={
                 <ol className="list-decimal pl-5 space-y-2">
                     <li>
@@ -29,8 +29,7 @@ export default function About() {
                     rapidly evolving technological landscape.
                     </li>
                 </ol>
-                }
-            srcImage="https://assets.aceternity.com/templates/startup-2.webp" altImage="Vision Image"/>
+                }/>
             <SectionTimeline/>
         </>
     )
