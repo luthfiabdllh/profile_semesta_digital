@@ -3,6 +3,7 @@ import Banner from "@/components/components/banner";
 import { Cta } from "@/components/components/cta";
 import { Logo } from "@/components/components/partnership";
 import ServicesCarousel from "@/components/components/ServiceCarousel";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'Beranda | Semesta Data Digital',
