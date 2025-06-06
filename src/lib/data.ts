@@ -112,7 +112,7 @@ export const services: Services[] = [
     description: "Transform your business with data-driven digital strategies.",
     longDescription:
       "We assist organizations in crafting and implementing effective digital transformation strategies. Using a human-centered and data-driven approach, we assess data readiness, business processes, and analytics capabilities to develop tailored solutions that support operational excellence and innovation.",
-    heroImage: "/placeholder.svg?height=500&width=600",
+    heroImage: "/images/services/CarouselDigitalTransformationConsulting.webp",
     featuresImage: "/images/services/FeaturesDigitalTransformationConsulting.webp",
     benefitsImage: "/images/services/BenefitsDigitalTransformationConsulting.webp",
     features: [
@@ -167,7 +167,7 @@ export const services: Services[] = [
       "Empowering organizations with strategic talent management and development solutions.",
     longDescription:
       "With academic roots, we are committed to nurturing digital talent through hands-on training, applied research, and real-world experience. Our programs are designed to develop professionals who are skilled, adaptable, and ready to contribute to the evolving demands of the technology industry.",
-    heroImage: "/placeholder.svg?height=500&width=600",
+    heroImage: "/images/services/CarouselTalentManagement&Development.webp",
     featuresImage: "/images/services/FeaturesTalentManagement&Development.webp",
     benefitsImage: "/images/services/BenefitsTalentManagement&Development.webp",
     features: [

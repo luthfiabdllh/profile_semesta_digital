@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Plus, MessageCircle, Phone, Mail } from "lucide-react"
+import { Plus, MessageCircle, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link" // Tambahkan import untuk Link component
 
@@ -56,12 +56,6 @@ export default function FloatingActionButton() {
       label: "Hubungi kami via WhatsApp", 
       color: "bg-green-500 hover:bg-green-600",
       href: "https://wa.me/6283124761723" 
-    },
-    { 
-      icon: <Phone size={20} />, 
-      label: "Hubungi kami via telepon", 
-      color: "bg-blue-500 hover:bg-blue-600",
-      href: "tel:+6283124761723" 
     },
     { 
       icon: <Mail size={20} />, 
