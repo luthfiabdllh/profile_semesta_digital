@@ -3,6 +3,7 @@
 import { ArrowRight, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 const Cta = () => {
   const containerVariants = {
@@ -125,12 +126,15 @@ const Cta = () => {
               Manage and optimize your company&apos;s data with cutting-edge technology to enhance efficiency and security.
             </motion.p>
             <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
-              <Button className="mt-6 overflow-hidden">
-                Get Started{" "}
-                <motion.span variants={arrowVariants}>
-                  <ArrowRight className="ml-2 size-4" />
-                </motion.span>
+              <Button className="mt-6 overflow-hidden" asChild>
+                <Link href="#service">
+                  Get Started{" "}
+                  <motion.span variants={arrowVariants}>
+                    <ArrowRight className="ml-2 size-4" />
+                  </motion.span>
+                </Link>
               </Button>
+
             </motion.div>
           </div>
           <div className="md:w-1/2">
