@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: Props) {
         >
           <div className="container mx-auto px-4">
             <Link
-              href="/"
+              href="/#services"
               className="inline-flex items-center text-slate-600 hover:text-slate-900 mb-8 transition-colors"
               aria-label="Kembali ke daftar semua layanan"
             >
