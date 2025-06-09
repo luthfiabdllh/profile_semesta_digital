@@ -55,7 +55,7 @@ export default function FloatingActionButton() {
       icon: <MessageCircle size={20} />, 
       label: "Hubungi kami via WhatsApp", 
       color: "bg-green-500 hover:bg-green-600",
-      href: "https://wa.me/6283124761723" 
+      href: "https://wa.me/+6283124761723" 
     },
     { 
       icon: <Mail size={20} />, 

@@ -11,7 +11,7 @@ const MapLocation = dynamic(() => import("../ui/mapLocation"), { ssr: false })
 export default function Footer() {
   const contactUs = [
     { icon: <Mail size={18} />, text: "semestadatadigital@gmail.com", href: "mailto:semestadatadigital@gmail.com" },
-    { icon: <Phone size={18} />, text: "(+62) 85293037949", href: "https://wa.me/6285293037949" },
+    { icon: <Phone size={18} />, text: "(+62) 85293037949", href: "https://wa.me/+6285293037949" },
   ]
 
 const services = [
