@@ -127,7 +127,7 @@ const Cta = () => {
             </motion.p>
             <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
               <Button className="mt-6 overflow-hidden" asChild>
-                <Link href="#service">
+                <Link href="#services">
                   Get Started{" "}
                   <motion.span variants={arrowVariants}>
                     <ArrowRight className="ml-2 size-4" />
