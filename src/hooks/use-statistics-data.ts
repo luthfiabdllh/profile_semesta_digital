@@ -4,6 +4,10 @@
 import useSWR from 'swr';
 import { SentimentData, TimelineData, NewsData } from '@/types/productTypes';
 
+interface FetchError extends Error {
+  info?: unknown;
+}
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL 
 
 const SENTIMENT_API_URL = `${API_BASE_URL}/search/sentiment-analysis`;
@@ -17,8 +21,8 @@ const fetcher = async (url: string) => {
   });
   if (!res.ok) {
     const errorInfo = await res.json().catch(() => ({}));
-    const error = new Error(`Gagal mengambil data dari ${url}. Status: ${res.status}`);
-    (error as any).info = errorInfo;
+    const error: FetchError = new Error(`Gagal mengambil data dari ${url}. Status: ${res.status}`);
+    error.info = errorInfo;
     throw error;
   }
   return res.json();
