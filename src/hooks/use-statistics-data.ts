@@ -4,7 +4,7 @@
 import useSWR from 'swr';
 import { SentimentData, TimelineData, NewsData } from '@/types/productTypes';
 
-const API_BASE_URL = process.env.NEXT_BASE_API_URL 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL 
 
 const SENTIMENT_API_URL = `${API_BASE_URL}/search/sentiment-analysis`;
 const TIMELINE_API_URL = `${API_BASE_URL}/search/timeline`;
