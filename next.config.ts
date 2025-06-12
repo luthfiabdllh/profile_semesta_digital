@@ -1,8 +1,13 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   images: {
-    domains: ["assets.aceternity.com"], // Tambahkan domain di sini
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**", // Mengizinkan semua domain
+      },
+    ],
   },
 };
 
