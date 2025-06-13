@@ -5,17 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// /lib/utils.ts
-
-export const extractTitle = (fulltext: string): string => {
-  if (!fulltext) return "Judul Berita Tidak Tersedia";
-  const firstSentence = fulltext.split(/[.!?]/)[0].trim();
-  if (firstSentence.length > 100) {
-    return `${firstSentence.substring(0, 100)}...`;
-  }
-  return firstSentence || "Berita Terbaru";
-};
-
 export const extractDomain = (url: string): string => {
   try {
     const domain = new URL(url).hostname;

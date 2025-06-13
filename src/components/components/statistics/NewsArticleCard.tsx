@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { NewsData } from "@/types/productTypes";
-import { extractTitle, extractDomain, formatDate, truncateText } from "@/lib/utils";
+import { extractDomain, formatDate, truncateText } from "@/lib/utils";
 import Link from "next/link";
 
 interface NewsArticleCardProps {
@@ -33,8 +33,6 @@ export function NewsArticleCard({ newsData }: NewsArticleCardProps) {
     );
   }
 
-  const title = extractTitle(newsData.fulltext);
-
   return (
     <section aria-labelledby="berita-terbaru">
       <Card>
@@ -48,7 +46,7 @@ export function NewsArticleCard({ newsData }: NewsArticleCardProps) {
             <div className="relative h-96 w-full">
               <Image
                 src={newsData.media_url || "/placeholder.svg"}
-                alt={`Gambar berita: ${title}`}
+                alt={`Gambar berita: ${newsData.title}`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
@@ -57,7 +55,7 @@ export function NewsArticleCard({ newsData }: NewsArticleCardProps) {
               />
             </div>
             <div className="p-4">
-              <h3 className="text-xl font-bold text-center mb-4">{title}</h3>
+              <h3 className="text-xl font-bold text-center mb-4">{newsData.title}</h3>
               <div className="flex items-center text-sm text-gray-500 mb-4">
                 <Globe className="w-4 h-4 mr-1" />
                 <span className="mr-2">Sumber:</span>

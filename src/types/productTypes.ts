@@ -34,6 +34,7 @@ export interface TimelineData {
 export interface NewsData {
   link: string;
   media_url: string;
+  title: string;
   fulltext: string;
   created: string;
   published: string;
