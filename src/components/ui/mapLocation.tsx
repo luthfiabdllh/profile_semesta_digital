@@ -13,7 +13,7 @@ const customIcon = new L.Icon({
   });
 
 export default function MapLocation() {
-  const position = useMemo<LatLngTuple>(() => [-7.7956, 110.3695], []);
+  const position = useMemo<LatLngTuple>(() => [-7.826272729570481, 110.3626546964112], []);
 
 
   return (
