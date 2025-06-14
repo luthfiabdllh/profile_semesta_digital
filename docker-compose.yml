@@ -5,11 +5,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - ./.env:/usr/src/app/.env
+      - ./.env:/usr/src/app/.env.production
     ports:
-      - "3000:3000"
+      - "3085:3000"
     environment:
       - NODE_ENV=production
-    restart: unless-stopped
+    restart: always
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:3000 || exit 1"]
       interval: 30s
