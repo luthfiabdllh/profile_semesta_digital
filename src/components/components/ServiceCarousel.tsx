@@ -146,11 +146,7 @@ export default function ServiceCarousel() {
                       <div className="p-5 flex flex-col justify-end relative z-20 h-full">
                         <div className="bg-black/40 backdrop-blur-sm -mx-5 -mb-5 p-5 rounded-b-lg">
                           <Badge
-                            className="mb-3 self-start" 
-                            style={{
-                              backgroundColor: `var(--${service.color.accent}-100)`,
-                              color: `var(--${service.color.primary}-700)`,
-                            }}
+                            className="mb-3 self-start dark:text-white bg-transparent" 
                           >
                             {service.badge}
                           </Badge>
