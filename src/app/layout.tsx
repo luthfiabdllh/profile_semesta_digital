@@ -20,6 +20,29 @@ export const metadata: Metadata = {
   title: "Semesta Data Digital | Solusi Digital & AI Terkemuka Indonesia",
   description: "Semesta Data Digital menyediakan solusi Big Data, AI, dan Transformasi Digital untuk mendorong pertumbuhan bisnis di Indonesia",
   keywords: ["big data", "artificial intelligence", "digital transformation", "data analytics", "ICT solutions", "layanan digital", "AI Indonesia"],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'android-chrome',
+        url: '/android-chrome-192x192.png',
+        sizes: '192x192',
+      },
+      {
+        rel: 'android-chrome',
+        url: '/android-chrome-512x512.png',
+        sizes: '512x512',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
   authors: [{ name: "Semesta Data Digital" }],
   creator: "Semesta Data Digital",
   publisher: "Semesta Data Digital",
@@ -27,14 +50,14 @@ export const metadata: Metadata = {
     email: false,
     telephone: false,
   },
-  metadataBase: new URL("https://semestadatadigital.com"),
+  metadataBase: new URL("https://semesta.vc"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Semesta Data Digital | Solusi Digital & AI Terkemuka Indonesia",
     description: "Solusi Big Data, AI, dan Transformasi Digital untuk mendorong pertumbuhan bisnis di Indonesia",
-    url: "https://semestadatadigital.com",
+    url: "https://semesta.vc",
     siteName: "Semesta Data Digital",
     images: [
       {
@@ -85,8 +108,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Semesta Data Digital',
-              url: 'https://semestadatadigital.com',
-              logo: 'https://semestadatadigital.com/logo.png',
+              url: 'https://semesta.vc',
+              logo: 'https://semesta.vc/logo.png',
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '(+62) 831-2476-1723',

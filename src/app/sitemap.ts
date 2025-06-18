@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { services } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://semestadatadigital.com';
+  const baseUrl = 'https://semesta.vc';
   
   // Halaman utama
   const routes = [
