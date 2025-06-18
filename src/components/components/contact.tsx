@@ -23,8 +23,8 @@ const Contact = () => {
             <p className="mb-3 text-muted-foreground">
                 Have a question or request? Drop us a message at our email address.
             </p>
-            <a href="#" className="font-semibold hover:underline">
-              semesta@mail.com
+            <a href="mailto:contact@semestadatadigital.com" className="font-semibold hover:underline">
+              semestadatadigital@gmail.com
             </a>
           </div>
           <div>
