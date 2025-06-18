@@ -30,13 +30,13 @@ export async function generateMetadata(
     description: service.longDescription,
     keywords: [service.badge, ...service.title.split(" "), "semesta data digital", "layanan teknologi", "solusi digital"],
     alternates: {
-      canonical: `https://semestadatadigital.com/services/${id}`,
+      canonical: `https://semesta.vc/services/${id}`,
     },
     openGraph: {
       title: service.title,
       description: service.longDescription,
       type: "website",
-      url: `https://semestadatadigital.com/services/${id}`,
+      url: `https://semesta.vc/services/${id}`,
       images: [
         {
           url: service.heroImage || "/placeholder.svg",
@@ -74,12 +74,12 @@ export default async function ServicePage({ params }: Props) {
             '@type': 'Service',
             name: service.title,
             description: service.longDescription,
-            url: `https://semestadatadigital.com/services/${id}`,
+            url: `https://semesta.vc/services/${id}`,
             provider: {
               '@type': 'Organization',
               name: 'Semesta Data Digital',
-              url: 'https://semestadatadigital.com',
-              logo: 'https://semestadatadigital.com/logo.png',
+              url: 'https://semesta.vc',
+              logo: 'https://semesta.vc/logo.png',
             },
             serviceType: service.badge,
             image: service.heroImage || "/placeholder.svg",

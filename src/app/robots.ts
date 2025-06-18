@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/', '/private/'],
     },
-    sitemap: 'https://semestadatadigital.com/sitemap.xml',
-    host: 'https://semestadatadigital.com',
+    sitemap: 'https://semesta.vc//sitemap.xml',
+    host: 'https://semesta.vc/',
   };
 }
