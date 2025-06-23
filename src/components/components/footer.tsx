@@ -145,8 +145,7 @@ const services = [
               </motion.div>
               <div className="text-wrap">
                 <p>
-                  Jl Persatuan UH III/549, Jl. Celeban, Tahunan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa
-                  Yogyakarta 55167
+                  Gang Mawar 215, Jl. Krapyak Wetan, Krapyak Kulon, Panggungharjo, Kec. Sewon, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55188
                 </p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -183,8 +182,7 @@ const services = [
             <div className="flex mb-5 space-x-3.5">
               <div className="text-wrap text-center">
                 <p>
-                  Jl Persatuan UH III/549, Jl. Celeban, Tahunan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa
-                  Yogyakarta 55167
+                  Gang Mawar 215, Jl. Krapyak Wetan, Krapyak Kulon, Panggungharjo, Kec. Sewon, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55188
                 </p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}

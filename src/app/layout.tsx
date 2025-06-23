@@ -118,7 +118,7 @@ export default function RootLayout({
               },
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Jl Persatuan UH III/549, Jl. Celeban, Tahunan',
+                streetAddress: 'Gang Mawar 215, Jl. Krapyak Wetan, Krapyak Kulon, Panggungharjo, Kec. Sewon, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55188',
                 addressLocality: 'Yogyakarta',
                 addressRegion: 'DIY',
                 postalCode: '55167',
