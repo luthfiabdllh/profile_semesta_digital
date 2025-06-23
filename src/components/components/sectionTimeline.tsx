@@ -8,8 +8,11 @@ export function SectionTimeline() {
       title: "2023",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-2">
             Projek Humas Presisi System di Divisi Humas Mabes POLRI
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Adalah platform digital berbasis dashboard untuk memantau dan menganalisis berita, tren, dan sentimen publik secara real-time. Dengan sistem ini, Divisi Humas POLRI bisa lebih cepat melihat isu yang berkembang di media online maupun media sosial, sehingga mempermudah penyusunan strategi komunikasi dan mempercepat respons terhadap isu. 
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -48,8 +51,11 @@ export function SectionTimeline() {
       title: "2024",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-3">
             Portal Humas Presisi di Bidang Humas Polda Metro Jaya
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Adalah platform terpadu dan inovatif yang dirancang untuk memantau dan menganalisis berita secara real-time. Dengan fitur canggih seperti analitik media online dan media sosial, alert system otomatis, hingga visualisasi data interaktif, portal ini memudahkan tim Humas Polda Metro Jaya dalam memantau perkembangan berita terkini, mengenali tren isu, serta memahami sentimen publik secara cepat dan akurat. Selain mempercepat proses pengambilan keputusan, platform ini juga meningkatkan efektivitas komunikasi dan memperkuat respons proaktif terhadap kebutuhan informasi masyarakat.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
